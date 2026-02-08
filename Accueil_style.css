@@ -7,10 +7,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background: #c4d6b5; /* Vert pâle */
     color: #343a3f; /* Noir doux */
     overflow-x: hidden;
+    
 }
 
 .header {
@@ -68,13 +73,14 @@ body {
 
 .home {
     height: 100vh;
-    background: url(FOND2.png) no-repeat;
+    background: url(FOND_ACCUEIL.png) no-repeat center center;
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: flex-start;
-    padding-top: 120px; /* sous le header */
+    padding-top: 120px;
+    box-sizing: border-box;
 }
+
 
 
 
@@ -98,7 +104,9 @@ body {
     overflow: hidden;
     text-align: left; 
     line-height: 1.;
-    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;          /* le plus gras possible */
+    color: #2f3e3b; /* Marron foncé */
     margin-left: -20px;
     padding-left: 0;
     margin-top: -25px;    
@@ -159,8 +167,8 @@ body {
     gap: 15px;
     position: relative;
     z-index: 1;
-    margin-top: 0px;
-    margin-left: -20px;
+    margin-top: 27px;
+    margin-left: -10px;
 }
 
 
@@ -194,7 +202,7 @@ body {
 
 .home-sci {
     position: relative;
-    top: 655px;
+    top: 700px;
     bottom: 20px; /* Positionner en bas à gauche */
     margin-left: -780px;    
     width: 170px;
