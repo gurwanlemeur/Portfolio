@@ -1,311 +1,300 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* Reset les marges et les paddings par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* BODY */
 
-/* Corps de la page */
-body {
-    width: 100vw; /* Utiliser toute la largeur de la fenêtre */
-    min-height: 100vh; /* Utiliser toute la hauteur de la fenêtre */
-    overflow-x: hidden; /* Supprimer le défilement horizontal */
-    background: #c4d6b5; /* Fond vert pâle */
-    font-family: 'Poppins', sans-serif; /* Police Poppins */
-}
+body{
 
-/* Style pour le header */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10px;
-    background: #6f7f6b;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+background:#c4d6b5;
+color:#343a3f;
+
 }
 
 
-/* Section Portfolio */
-.portfolio {
-    margin-top: 120px; /* Espacement en haut pour éviter que le contenu soit masqué par le header */
-    padding: 40px 10%; /* Padding adapté à votre design */
-    background: #c4d6b5; /* Vert pâle */
-    color: #343a3f; /* Noir doux pour le texte */
-    text-align: center;
-    min-height: 100vh; /* Pour étendre le fond sur toute la hauteur de la page */
+/* HEADER */
+
+.header{
+
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10px;
+background:#6f7f6b;
+z-index:100;
+
 }
 
-/* Titre de la section Portfolio */
-/* Titre de la section Portfolio avec un fond */
-.portfolio h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #343a3f;
-    margin-bottom: 40px; /* S'assure que le fond ne s'étend pas sur toute la largeur */
+.navbar{
+
+display:flex;
+justify-content:center;
+gap:40px;
+
 }
 
-/* Liste des éléments du portfolio */
-.portfolio-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 100px;
-    padding-bottom: 20px;
-    max-width: 100%;
-    overflow: visible;   /* ✅ pas de scroll interne */
-    height: auto;        /* ✅ laisse le contenu définir la hauteur */
-}
+.navbar a{
 
+font-size:18px;
+color:#343a3f;
+text-decoration:none;
+font-weight:500;
 
-
-
-/* Élément individuel du portfolio */
-.portfolio-item {
-    flex-shrink: 0; /* Empêche les éléments de rétrécir */
-    width: 80%; /* Largeur des éléments ajustée */
-    height: auto; /* Laisser l'élément s'adapter à la hauteur de l'image */
-    text-align: center;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto 10px auto; /* Centrer les éléments */
-}
-
-/* Style pour les images des éléments du portfolio */
-.portfolio-item img {
-    width: 100%; /* S'assurer que l'image occupe toute la largeur de l'élément */
-    height: auto; /* Assurer que la hauteur est ajustée automatiquement */
-    object-fit: contain; /* Garde l'image dans ses proportions sans être coupée */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Style pour désactiver le défilement quand une image est agrandie */
-body.no-scroll {
-    overflow: hidden;
-}
-
-/* Effet au survol des éléments du portfolio */
-.portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Titre de chaque projet dans le portfolio */
-.portfolio-item h3 {
-    margin-top: 10px;
-    font-size: 22px;
-    color: #343a3f;
-    font-weight: 600;
-}
-
-/* Description sous chaque projet */
-.portfolio-item p {
-    font-size: 16px;
-    color: #6c757d;
-    margin-top: 10px;
-}
-
-/* Navbar */
-.navbar {
-    margin-right: 45px;
-}
-
-.navbar a {
-    font-size: 18px;
-    color: #343a3f;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: 0.3s;
 }
 
 .navbar a:hover,
-.navbar a.active {
-    color: #ffffff;
+.navbar a.active{
+
+color:white;
+
 }
 
 
+/* PAGE STRUCTURE */
 
+.page{
 
-/* Conteneur carrousel */
-.carousel {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
+display:flex;
+justify-content:center;
 
-/* Images simples ET images de carrousel = même rendu */
-.portfolio-item img,
-.carousel-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+padding-top:140px;
+padding-bottom:100px;
 
-/* Gestion affichage carrousel */
-.carousel-image {
-    display: none;
-}
-
-.carousel-image.active {
-    display: block;
 }
 
 
+/* CENTRAL COLUMN */
 
-/* Les flèches de navigation */
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre pour les flèches */
-    color: #fff; /* Couleur des flèches */
-    padding: 10px;
-    border-radius: 50%; /* Forme ronde */
-    font-size: 30px; /* Taille des flèches */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-}
+.center-column{
 
-.carousel-arrow.left {
-    left: 10px; /* Flèche gauche à gauche */
-}
+background:#263a37;
 
-.carousel-arrow.right {
-    right: 10px; /* Flèche droite à droite */
-}
+width:1000px;
+max-width:90%;
 
+padding:60px;
 
+border-radius:20px;
 
+display:flex;
+flex-direction:column;
+align-items:center;
 
-/* Logo aligné à gauche */
+gap:50px;
 
+color:white;
 
-/* Ajouter des requêtes de media pour la réactivité */
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
 
-/* Pour les écrans larges (tablettes et petits écrans de bureau) */
-@media screen and (max-width: 1200px) {
-    .portfolio h2 {
-        font-size: 35px;
-    }
-
-    .portfolio-items {
-        gap: 30px;
-        height: auto;
-    }
-
-    .portfolio-item {
-        width: 90%;
-    }
-
-    .navbar {
-        font-size: 20px;
-        gap: 25px;
-    }
-
-    .logo {
-        font-size: 22px;
-    }
-}
-
-/* Pour les écrans de taille moyenne (tablettes portrait et petits écrans mobiles) */
-@media screen and (max-width: 768px) {
-    .portfolio h2 {
-        font-size: 28px;
-    }
-
-    .portfolio-items {
-        gap: 20px;
-        height: auto;
-    }
-
-    .portfolio-item {
-        width: 95%;
-    }
-
-    .navbar {
-        font-size: 18px;
-        gap: 15px;
-        right: 20px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-}
-
-/* Pour les petits écrans (téléphones mobiles) */
-@media screen and (max-width: 480px) {
-    .portfolio h2 {
-        font-size: 24px;
-    }
-
-    .portfolio-items {
-        gap: 15px;
-    }
-
-    .portfolio-item {
-        width: 100%;
-    }
-
-    .navbar {
-        font-size: 16px;
-        gap: 10px;
-        right: 10px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
 }
 
 
+/* TITRE */
 
+.portfolio h2{
 
+font-size:40px;
+font-weight:700;
 
-
-.carousel video {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover; /* ✅ PAS de découpe */
-    background: #000; /* optionnel : bandes noires propres */
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-/* Style spécifique pour la vidéo du portfolio */
-.portfolio-item video {
-    width: 100%;
-    height: 500px;          /* ← AUGMENTE LA TAILLE ICI */
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
 
+/* LISTE PROJETS */
+
+.portfolio-items{
+
+display:flex;
+flex-direction:column;
+gap:60px;
+
+width:100%;
+
+}
 
 
+/* CARTE PROJET */
+
+.portfolio-item{
+
+background:white;
+
+color:#343a3f;
+
+padding:25px;
+
+border-radius:14px;
+
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+
+transition:0.3s;
+
+}
+
+.portfolio-item:hover{
+
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
 
 
+/* IMAGES */
+
+.portfolio-item img{
+
+width:100%;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+}
 
 
+/* TITRE PROJET */
+
+.portfolio-item h3{
+
+font-size:22px;
+margin-bottom:10px;
+
+}
+
+
+/* TEXTE */
+
+.portfolio-item p{
+
+font-size:16px;
+line-height:1.6;
+
+}
+
+
+/* VIDEO */
+
+.portfolio-item video{
+
+width:100%;
+height:450px;
+
+object-fit:contain;
+
+border-radius:10px;
+
+margin-bottom:20px;
+
+}
+
+
+/* CARROUSEL */
+
+.carousel{
+
+position:relative;
+
+}
+
+.carousel-image{
+
+display:none;
+
+}
+
+.carousel-image.active{
+
+display:block;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.center-column{
+
+padding:40px 20px;
+
+}
+
+.portfolio h2{
+
+font-size:28px;
+
+}
+
+.portfolio-item video{
+
+height:auto;
+
+}
+
+}
+
+/* FLÈCHES DU CARROUSEL */
+
+.carousel-arrow{
+
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+
+background:#263a37;
+color:white;
+
+width:55px;
+height:55px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+font-size:30px;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+transition:0.2s;
+
+z-index:10;
+
+}
+
+
+/* POSITION */
+
+.carousel-arrow.left{
+left:10px;
+}
+
+.carousel-arrow.right{
+right:10px;
+}
+
+
+/* HOVER */
+
+.carousel-arrow:hover{
+
+background:#c4d6b5;
+color:#263a37;
+
+transform:translateY(-50%) scale(1.1);
+
+}
+
+/* cacher les flèches */
+
+.carousel.hide-arrows .carousel-arrow{
+opacity:0;
+pointer-events:none;
+}

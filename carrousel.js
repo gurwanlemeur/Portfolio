@@ -44,3 +44,15 @@ carousels.forEach((carousel, index) => {
     carousel.setAttribute('data-index', currentIndex);
 });
 
+
+document.querySelectorAll(".carousel").forEach(carousel => {
+
+    carousel.addEventListener("click", function(e){
+
+        if(e.target.tagName === "IMG"){
+            carousel.classList.toggle("hide-arrows");
+        }
+
+    });
+
+});
