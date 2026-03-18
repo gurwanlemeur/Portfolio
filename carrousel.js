@@ -45,14 +45,64 @@ carousels.forEach((carousel, index) => {
 });
 
 
-document.querySelectorAll(".carousel").forEach(carousel => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    carousel.addEventListener("click", function(e){
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const close = document.querySelector(".lightbox .close");
 
-        if(e.target.tagName === "IMG"){
-            carousel.classList.toggle("hide-arrows");
+    const leftArrow = document.querySelector(".lightbox-arrow.left");
+    const rightArrow = document.querySelector(".lightbox-arrow.right");
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    // clic sur image
+    document.querySelectorAll(".carousel").forEach(carousel => {
+
+        const images = carousel.querySelectorAll(".carousel-image");
+
+        images.forEach((img, index) => {
+
+            img.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                currentImages = images;
+                currentIndex = index;
+
+                showImage();
+                lightbox.style.display = "flex";
+            });
+
+        });
+
+    });
+
+    function showImage() {
+        lightboxImg.src = currentImages[currentIndex].src;
+    }
+
+    // flèche droite
+    rightArrow.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        showImage();
+    });
+
+    // flèche gauche
+    leftArrow.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        showImage();
+    });
+
+    // fermer
+    close.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
         }
-
     });
 
 });
