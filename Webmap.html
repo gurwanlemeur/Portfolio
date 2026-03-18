@@ -22,11 +22,17 @@
 
 <nav class="navbar">
 
-<a href="Accueil.html"><strong>Accueil</strong></a>
-<a href="CV.html">À propos</a>
-<a href="Portfolio.html">Portfolio</a>
-<a href="Webmap.html" class="active">Bus en temps réel</a>
-<a href="contact.html">Contact</a>
+<div class="menu-toggle" id="menu-toggle">
+  ☰
+</div>
+
+<div class="nav-links" id="nav-links">
+  <a href="Accueil.html"><strong>Accueil</strong></a>
+  <a href="CV.html">À propos</a>
+  <a href="Portfolio.html">Portfolio</a>
+  <a href="Webmap.html" class="active">Bus en temps réel</a>
+  <a href="contact.html">Contact</a>
+</div>
 
 </nav>
 
@@ -190,6 +196,31 @@ layers[feature.properties.etat].addLayer(singleBusLayer);
 downloadAndDisplayBuses();
 
 setInterval(downloadAndDisplayBuses, 60000);
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  if (toggle && nav) {
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    // ferme le menu après clic
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+
+  }
+
+});
 
 </script>
 

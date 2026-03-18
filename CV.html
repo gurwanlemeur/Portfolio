@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="CV_style.css">
 
-</head>
+</head>x
 
 <body>
 
@@ -17,11 +17,17 @@
 
 <nav class="navbar">
 
-<a href="Accueil.html"><strong>Accueil</strong></a>
-<a href="CV.html" class="active">À propos</a>
-<a href="Portfolio.html">Portfolio</a>
-<a href="Webmap.html">Bus en temps réel</a>
-<a href="contact.html">Contact</a>
+<div class="menu-toggle" id="menu-toggle">
+  ☰
+</div>
+
+<div class="nav-links" id="nav-links">
+  <a href="Accueil.html"><strong>Accueil</strong></a>
+  <a href="CV.html" class="active">À propos</a>
+  <a href="Portfolio.html">Portfolio</a>
+  <a href="Webmap.html">Bus en temps réel</a>
+  <a href="contact.html">Contact</a>
+</div>
 
 </nav>
 
@@ -43,6 +49,15 @@ Télécharger mon CV
 </div>
 
 </section>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 
 </body>
 
