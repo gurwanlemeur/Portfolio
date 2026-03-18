@@ -57,10 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentImages = [];
     let currentIndex = 0;
 
-    // clic sur image
-    document.querySelectorAll(".carousel").forEach(carousel => {
+    document.querySelectorAll(".portfolio-item").forEach(item => {
 
-        const images = carousel.querySelectorAll(".carousel-image");
+        const images = item.querySelectorAll("img");
 
         images.forEach((img, index) => {
 
@@ -82,19 +81,16 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxImg.src = currentImages[currentIndex].src;
     }
 
-    // flèche droite
     rightArrow.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % currentImages.length;
         showImage();
     });
 
-    // flèche gauche
     leftArrow.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
         showImage();
     });
 
-    // fermer
     close.addEventListener("click", () => {
         lightbox.style.display = "none";
     });
@@ -106,3 +102,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+    
