@@ -71,6 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 showImage();
                 lightbox.style.display = "flex";
+
+                // ✅ GESTION DES FLÈCHES
+                if (currentImages.length <= 1) {
+                    leftArrow.style.display = "none";
+                    rightArrow.style.display = "none";
+                } else {
+                    leftArrow.style.display = "block";
+                    rightArrow.style.display = "block";
+                }
             });
 
         });
@@ -82,11 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     rightArrow.addEventListener("click", () => {
+        if (currentImages.length <= 1) return; // sécurité
         currentIndex = (currentIndex + 1) % currentImages.length;
         showImage();
     });
 
     leftArrow.addEventListener("click", () => {
+        if (currentImages.length <= 1) return; // sécurité
         currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
         showImage();
     });
