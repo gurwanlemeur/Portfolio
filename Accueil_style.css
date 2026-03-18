@@ -269,6 +269,16 @@ color:#263a37;
   color: white;
 }
 
+.home-projects a img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home-projects a:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
 
 /* RESPONSIVE */
 
